@@ -125,12 +125,12 @@ Console.WriteLine(d);  // dynamic binding to Console.WriteLine(int)
 | [Реляционные операторы и операторы тестирования типа](expressions.md#relational-and-type-testing-operators) | Равенство                    | `==`  `!=`    | 
 | [Логические операторы](expressions.md#logical-operators)                                         | Логическое И                 | `&`           | 
 | [Логические операторы](expressions.md#logical-operators)                                         | Логическое исключающее ИЛИ                 | `^`           | 
-| [Логические операторы](expressions.md#logical-operators)                                         | Логическое ИЛИ                  | `|`           |
+| [Логические операторы](expressions.md#logical-operators)                                         | Логическое ИЛИ                  | <code>&#124;</code>           |
 | [Условные логические операторы](expressions.md#conditional-logical-operators)                 | Условное И             | `&&`          | 
-| [Условные логические операторы](expressions.md#conditional-logical-operators)                 | Условное ИЛИ              | `||`          | 
+| [Условные логические операторы](expressions.md#conditional-logical-operators)                 | Условное ИЛИ              | <code>&#124;&#124;</code>          | 
 | [Оператор объединения со значением NULL](expressions.md#the-null-coalescing-operator)                   | Объединение со значением NULL             | `??`          | 
 | [Условный оператор](expressions.md#conditional-operator)                                   | Условие                 | `?:`          | 
-| [Операторы присваивания](expressions.md#assignment-operators), [выражения анонимных функций](expressions.md#anonymous-function-expressions)  | Присвоение и лямбда-выражения | `=`  `*=`  `/=`  `%=`  `+=`  `-=`  `<<=`  `>>=`  `&=`  `^=`  `|=`  `=>` | 
+| [Операторы присваивания](expressions.md#assignment-operators), [выражения анонимных функций](expressions.md#anonymous-function-expressions)  | Присвоение и лямбда-выражения | `=`  `*=`  `/=`  `%=`  `+=`  `-=`  `<<=`  `>>=`  `&=`  `^=`  <code>&#124;=</code>  `=>` | 
 
 Если операнд располагается между двумя операторами с одинаковым приоритетом, ассоциативностью операторов управляет порядком, в котором выполняются операции:
 
@@ -3503,7 +3503,7 @@ bool? operator |(bool? x, bool? y);
 
 В следующей таблице перечислены результаты этих операторов для всех сочетаний значений `true`, `false`, и `null`.
 
-| `x`     | `y`     | `x & y` | "x | y " |
+| `x`     | `y`     | `x & y` | <code>x &#124; y</code> |
 |:-------:|:-------:|:-------:|:-------:|
 | `true`  | `true`  | `true`  | `true`  | 
 | `true`  | `false` | `false` | `true`  | 
