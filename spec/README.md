@@ -57,7 +57,7 @@ __Версии 6__
 * [Выражения](expressions.md)
     * [Классификации выражений](expressions.md#expression-classification)
     * [Статическая и динамическая привязка](expressions.md#static-and-dynamic-binding)
-    * [Операторы](expressions.md#operators)
+    * [Инструкции](expressions.md#operators)
     * [Поиск члена](expressions.md#member-lookup)
     * [Функции-члены](expressions.md#function-members)
     * [Первичные выражения](expressions.md#primary-expressions)

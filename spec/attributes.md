@@ -821,7 +821,7 @@ public void Log(
 
 ## <a name="attributes-for-interoperation"></a>Атрибуты для взаимодействия
 
-Примечание: Этот раздел применим только к реализации Microsoft .NET, C#.
+Примечание. Этот раздел применим только к реализации Microsoft .NET C#.
 
 ### <a name="interoperation-with-com-and-win32-components"></a>Взаимодействие с компонентами COM и Win32
 

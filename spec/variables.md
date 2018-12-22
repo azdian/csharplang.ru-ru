@@ -14,13 +14,13 @@ C# определяет семь категорий переменных: ста
 ```csharp
 class A
 {
-public static int x;
-int y;
+    public static int x;
+    int y;
 
-void F(int[] v, int a, ref int b, out int c) {
-int i = 1;
-c = a + b++;
-}
+    void F(int[] v, int a, ref int b, out int c) {
+        int i = 1;
+        c = a + b++;
+    }
 }
 ```
 `x` Статическая переменная, `y` является переменной экземпляра `v[0]` является элементом массива `a` является значение параметра, `b` — это ссылочный параметр, `c` является параметром output и `i` является локальной переменной.
@@ -207,14 +207,14 @@ c = a + b++;
 
 Состояние определенного присваивания *v* на элементе управления передачи для первой инструкции списка операторов в блоке (или в конечную точку блока, если список операторов пуст) совпадает со значением определенного присваивания переменной *v* перед блоком, `checked`, или `unchecked` инструкции.
 
-#### <a name="expression-statements"></a>Операторы выражений
+#### <a name="expression-statements"></a>Инструкции выражений
 
 Для инструкции выражение *stmt* , состоящий из выражения *expr*:
 
 *  *v* имеющий то же состояние определенного присваивания в начале *expr* как в начале *stmt*.
 *  Если *v* Если определенно присвоенной в конце *expr*, он считается определенно присвоенной в конечную точку *stmt*; в противном случае; определенно не назначен в конечную точку *stmt*.
 
-#### <a name="declaration-statements"></a>Операторы объявления
+#### <a name="declaration-statements"></a>Инструкции объявления
 
 *  Если *stmt* является оператором объявления без инициализаторов, затем *v* имеет такое же состояние определенного присваивания в конечную точку *stmt* как в начале *stmt*.
 *  Если *stmt* является оператором объявления с инициализаторами, затем состояние определенного присваивания для *v* определяется так, как если *stmt* списка операторов, с помощью одно назначение инструкции для каждого объявления с инициализатором (в порядке объявления).
@@ -272,11 +272,11 @@ for ( for_initializer ; for_condition ; for_iterator ) embedded_statement
 выполняется для оператора:
 ```csharp
 {
-for_initializer ;
-while ( for_condition ) {
-embedded_statement ;
-for_iterator ;
-}
+    for_initializer ;
+    while ( for_condition ) {
+        embedded_statement ;
+        for_iterator ;
+    }
 }
 ```
 
@@ -358,10 +358,10 @@ finally *finally_block*
 выполняется, как если бы были инструкция `try` - `finally` заключения инструкции `try` - `catch` инструкции:
 ```csharp
 try {
-try try_block
-catch(...) catch_block_1
-...
-catch(...) catch_block_n
+    try try_block
+    catch(...) catch_block_1
+    ...
+    catch(...) catch_block_n
 }
 finally finally_block
 ```
@@ -370,31 +370,31 @@ finally finally_block
 ```csharp
 class A
 {
-static void F() {
-int i, j;
-try {
-goto LABEL;
-// neither i nor j definitely assigned
-i = 1;
-// i definitely assigned
-}
+    static void F() {
+        int i, j;
+        try {
+            goto LABEL;
+            // neither i nor j definitely assigned
+            i = 1;
+            // i definitely assigned
+        }
 
-catch {
-// neither i nor j definitely assigned
-i = 3;
-// i definitely assigned
-}
+        catch {
+            // neither i nor j definitely assigned
+            i = 3;
+            // i definitely assigned
+        }
 
-finally {
-// neither i nor j definitely assigned
-j = 5;
-// j definitely assigned
-}
-// i and j definitely assigned
-LABEL:;
-// j definitely assigned
+        finally {
+            // neither i nor j definitely assigned
+            j = 5;
+            // j definitely assigned
+            }
+        // i and j definitely assigned
+        LABEL:;
+        // j definitely assigned
 
-}
+    }
 }
 ```
 
